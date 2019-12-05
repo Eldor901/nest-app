@@ -14,10 +14,6 @@ import {
 } from "./Conf/register.conf";
 
 
-const oneColumnCheck: number = 1;
-const twoColumnCheck: number = 2;
-const threeCoulumnCheck: number = 3;
-
 
 describe('User/Register', () => {
     let app: INestApplication;

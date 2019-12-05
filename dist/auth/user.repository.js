@@ -10,6 +10,7 @@ const typeorm_1 = require("typeorm");
 const user_entity_1 = require("./user.entity");
 const common_1 = require("@nestjs/common");
 const bcrypt_1 = require("bcrypt");
+const user_info_dto_1 = require("./dto/user.info.dto");
 let UserRepository = class UserRepository extends typeorm_1.Repository {
     async m_hashpassword(password, hashing) {
         return bcrypt_1.hash(password, hashing);
@@ -28,8 +29,8 @@ let UserRepository = class UserRepository extends typeorm_1.Repository {
             throw new common_1.InternalServerErrorException("This kind of email is already exists");
         }
     }
-    async findEmail(username) {
-        return user_entity_1.User.findOne({ email: username });
+    async findEmail(userEmail) {
+        return user_entity_1.User.findOne({ email: userEmail });
     }
     async Validatelogin(loginDto) {
         const { email, password } = loginDto;
@@ -38,10 +39,26 @@ let UserRepository = class UserRepository extends typeorm_1.Repository {
             let salt = user.salt;
             let passwordCheck = await this.m_hashpassword(password, salt);
             if (user.password === passwordCheck) {
-                return email;
+                let userInfo = new user_info_dto_1.UserInfo();
+                userInfo.name = user.name;
+                userInfo.email = user.email;
+                return userInfo;
             }
         }
         return null;
+    }
+    async ChangePassword(email, resetPasswordDto) {
+        const user = await this.findEmail(email);
+        const { password } = resetPasswordDto;
+        console.log(password);
+        user.salt = await bcrypt_1.genSalt();
+        user.password = await this.m_hashpassword(password, user.salt);
+        try {
+            await user.save();
+        }
+        catch (err) {
+            throw new common_1.InternalServerErrorException("password is not changed");
+        }
     }
 };
 UserRepository = __decorate([

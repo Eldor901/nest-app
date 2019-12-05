@@ -15,20 +15,27 @@ const user_entity_1 = require("./user.entity");
 const passport_1 = require("@nestjs/passport");
 const jwt_1 = require("@nestjs/jwt");
 const constants_1 = require("./constants");
+const google_strategy_1 = require("./strategyTS/google.strategy");
+const jwt_strategy_1 = require("./strategyTS/jwt.strategy");
+const facebook_strategy_1 = require("./strategyTS/facebook.strategy");
+const vk_strategy_1 = require("./strategyTS/vk.strategy");
 let AuthModule = class AuthModule {
 };
 AuthModule = __decorate([
     common_1.Module({
         imports: [
             passport_1.PassportModule.register({ defaultStrategy: 'jwt' }),
+            passport_1.PassportModule.register({ session: true }),
             jwt_1.JwtModule.register({
                 secret: constants_1.jwtConstants.secret,
-                signOptions: { expiresIn: '3600' },
+                signOptions: { expiresIn: '600s' },
             }),
             typeorm_1.TypeOrmModule.forFeature([user_entity_1.User, user_repository_1.UserRepository]),
         ],
         controllers: [auth_controller_1.AuthController],
-        providers: [auth_service_1.AuthService],
+        providers: [auth_service_1.AuthService, google_strategy_1.GoogleStrategy, jwt_strategy_1.JwtStrategy,
+            facebook_strategy_1.FacebookStrategy, vk_strategy_1.VkStrategy],
+        exports: [auth_service_1.AuthService],
     })
 ], AuthModule);
 exports.AuthModule = AuthModule;

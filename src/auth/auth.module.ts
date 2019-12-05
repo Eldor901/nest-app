@@ -7,18 +7,27 @@ import {User} from "./user.entity";
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
 import { jwtConstants } from './constants';
+import {GoogleStrategy} from "./strategyTS/google.strategy";
+import {JwtStrategy} from "./strategyTS/jwt.strategy";
+import {FacebookStrategy} from "./strategyTS/facebook.strategy";
+import {VkStrategy} from "./strategyTS/vk.strategy";
 
 @Module({
   imports: [
       PassportModule.register({defaultStrategy: 'jwt'}),
+      PassportModule.register({ session: true }),
       JwtModule.register({
           secret: jwtConstants.secret,
-          signOptions: { expiresIn: '3600' },
+          signOptions: { expiresIn: '600s' },
       }),
       TypeOrmModule.forFeature([User, UserRepository]),
   ],
   controllers: [AuthController],
-  providers: [AuthService],
+  providers: [AuthService, GoogleStrategy, JwtStrategy,
+      FacebookStrategy, VkStrategy],
+  exports: [AuthService],
 
 })
+
+
 export class AuthModule {}

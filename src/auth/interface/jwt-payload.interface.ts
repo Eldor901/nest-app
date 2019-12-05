@@ -1,3 +1,5 @@
 export class JwtPayload{
-    userEmail: string;
+    email: string;
+    name: string;
 }
+
