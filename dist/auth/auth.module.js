@@ -19,6 +19,7 @@ const google_strategy_1 = require("./strategyTS/google.strategy");
 const jwt_strategy_1 = require("./strategyTS/jwt.strategy");
 const facebook_strategy_1 = require("./strategyTS/facebook.strategy");
 const vk_strategy_1 = require("./strategyTS/vk.strategy");
+const mailer_1 = require("@nest-modules/mailer");
 let AuthModule = class AuthModule {
 };
 AuthModule = __decorate([
@@ -26,6 +27,21 @@ AuthModule = __decorate([
         imports: [
             passport_1.PassportModule.register({ defaultStrategy: 'jwt' }),
             passport_1.PassportModule.register({ session: true }),
+            mailer_1.MailerModule.forRootAsync({
+                useFactory: () => ({
+                    transport: 'smtps://user@domain.com:pass@smtp.domain.com',
+                    defaults: {
+                        from: '"nest-modules" <modules@nestjs.com>',
+                    },
+                    template: {
+                        dir: __dirname + '/templates',
+                        adapter: new mailer_1.HandlebarsAdapter(),
+                        options: {
+                            strict: true,
+                        },
+                    },
+                }),
+            }),
             jwt_1.JwtModule.register({
                 secret: constants_1.jwtConstants.secret,
                 signOptions: { expiresIn: '600s' },

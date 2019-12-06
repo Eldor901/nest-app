@@ -1,4 +1,4 @@
-import {Body, Controller, Get, Post, Req,Request, Res, UseGuards, ValidationPipe} from '@nestjs/common';
+import {Body, Controller, Get, Post, Put, Req, Request, Res, UseGuards, ValidationPipe} from '@nestjs/common';
 import {RegisterDto} from "./dto/register.dto";
 import {AuthService} from "./auth.service";
 import {LoginDto} from "./dto/login.dto";
@@ -31,7 +31,7 @@ export class AuthController {
        return this.authService.confirmEmail(confirmEmailDto);
    }
 
-   @Post("/reset")
+   @Put("/reset")
    @UseGuards(AuthGuard('jwt'))
    resetPassword(@Request() req, @Body(ValidationPipe) resetPasswordDto:ResetPasswordDto):Promise<void>
    {
@@ -66,6 +66,5 @@ export class AuthController {
     {
         return req.user;
     }
-
 
 }

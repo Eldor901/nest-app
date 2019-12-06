@@ -13,7 +13,6 @@ const tasks_module_1 = require("./tasks/tasks.module");
 const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_config_1 = require("./config/typeorm.config");
 const auth_module_1 = require("./auth/auth.module");
-const mailer_1 = require("@nest-modules/mailer");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -22,21 +21,6 @@ AppModule = __decorate([
             typeorm_1.TypeOrmModule.forRoot(typeorm_config_1.typeOrmConfig),
             tasks_module_1.TasksModule,
             auth_module_1.AuthModule,
-            mailer_1.MailerModule.forRootAsync({
-                useFactory: () => ({
-                    transport: 'smtps://user@domain.com:pass@smtp.domain.com',
-                    defaults: {
-                        from: '"nest-modules" <modules@nestjs.com>',
-                    },
-                    template: {
-                        dir: __dirname + '/templates',
-                        adapter: new mailer_1.HandlebarsAdapter(),
-                        options: {
-                            strict: true,
-                        },
-                    },
-                }),
-            }),
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

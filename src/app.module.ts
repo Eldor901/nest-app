@@ -12,21 +12,6 @@ import { HandlebarsAdapter, MailerModule } from '@nest-modules/mailer';
       TypeOrmModule.forRoot(typeOrmConfig),
       TasksModule,
       AuthModule,
-      MailerModule.forRootAsync({
-          useFactory: () => ({
-              transport: 'smtps://user@domain.com:pass@smtp.domain.com',
-              defaults: {
-                  from:'"nest-modules" <modules@nestjs.com>',
-              },
-              template: {
-                  dir: __dirname + '/templates',
-                  adapter: new HandlebarsAdapter(), // or new PugAdapter()
-                  options: {
-                      strict: true,
-                  },
-              },
-          }),
-      }),
   ],
   controllers: [AppController],
   providers: [AppService],

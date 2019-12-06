@@ -2,32 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11d952ec-9477-4eb5-9704-c864bbd6c197" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/test/auth/Login/auth.conf.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/auth/register/register-e2e.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/auth/register/register.conf.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/auth/resetPassword/resetPassword.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/app.module.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app.module.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/app.module.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app.module.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/auth/auth.controller.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/auth/auth.controller.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/auth/auth.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/auth/auth.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/auth/auth.controller.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/auth/auth.controller.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/auth/auth.module.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/auth/auth.module.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/auth/auth.module.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/auth/auth.module.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/auth/auth.service.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/auth/auth.service.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/auth/auth.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/auth/auth.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/auth/auth.service.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/auth/auth.service.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/auth/interface/jwt-payload.interface.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/auth/interface/jwt-payload.interface.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/auth/interface/jwt-payload.interface.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/auth/interface/jwt-payload.interface.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/auth/user.repository.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/auth/user.repository.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/auth/user.repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/auth/user.repository.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/auth/user.repository.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/auth/user.repository.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/tsconfig.build.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/dist/tsconfig.build.tsbuildinfo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/auth/auth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/auth/auth.controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/auth/auth.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/auth/auth.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/auth/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/auth/interface/jwt-payload.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/auth/interface/jwt-payload.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/auth/user.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/auth/user.repository.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/auth/register-e2e.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/auth/register-e2e.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/auth/dto/resetPassword.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/auth/dto/resetPassword.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/auth/Conf/auth.conf.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/auth/Conf/recover.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/auth/Conf/register.conf.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/auth/register-e2e.spec.ts" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,6 +32,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/nest_app$app_spec_ts.info" NAME="app.spec.ts Coverage Results" MODIFIED="1574080973541" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="JestJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/nest_app$tasks_e2e_spec_ts.info" NAME="tasks.e2e-spec.ts Coverage Results" MODIFIED="1574079195240" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="JestJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/nest_app$User_ResetPassword.info" NAME="User/ResetPassword Coverage Results" MODIFIED="1575616739389" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="JestJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="nest-app" />
@@ -47,10 +42,61 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/auth/auth.controller.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-287">
-              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+            <state relative-caret-position="-306">
+              <caret line="33" column="17" lean-forward="true" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/auth/register/register.conf.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="18" column="33" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/auth/Login/auth.conf.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="9" column="17" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/auth/register/register-e2e.spec.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1751">
+              <caret line="103" column="52" lean-forward="true" selection-start-line="103" selection-start-column="52" selection-end-line="103" selection-end-column="52" />
               <folding>
-                <element signature="e#0#104#0" expanded="true" />
+                <element signature="e#0#50#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/auth/Login/auth-e2e.spec.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="38" column="24" lean-forward="true" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="76" />
+              <folding>
+                <element signature="e#0#50#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/auth/resetPassword/resetPassword-e2e.spec.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="139">
+              <caret line="59" column="65" selection-start-line="59" selection-start-column="65" selection-end-line="59" selection-end-column="65" />
+              <folding>
+                <element signature="e#0#50#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -59,65 +105,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/auth/dto/resetPassword.dto.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+            <state relative-caret-position="136">
+              <caret line="8" column="21" lean-forward="true" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/auth/dto/user.info.dto.ts">
+        <entry file="file://$PROJECT_DIR$/src/auth/dto/register.dto.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/auth/strategyTS/jwt.strategy.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-              <folding>
-                <element signature="e#0#49#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/auth/strategyTS/facebook.strategy.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-              <folding>
-                <element signature="e#0#44#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/auth/strategyTS/google.strategy.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-              <folding>
-                <element signature="e#0#44#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/auth/auth.service.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-22">
-              <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
-              <folding>
-                <element signature="e#0#65#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="238">
+              <caret line="14" selection-start-line="14" selection-end-line="18" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -125,8 +123,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/auth/auth.module.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="272">
+              <caret line="29" column="28" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -135,22 +133,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/auth/user.repository.ts">
+        <entry file="file://$PROJECT_DIR$/test/auth/resetPassword/resetPassword.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-685">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-              <folding>
-                <element signature="e#0#53#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/auth/dto/confirmEmail.dto.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+            <state relative-caret-position="221">
+              <caret line="13" column="35" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -163,37 +149,21 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/tasks/dto/create-task.dto.ts" />
-        <option value="$PROJECT_DIR$/src/tasks/tasks.service.ts" />
-        <option value="$PROJECT_DIR$/src/tasks/pipes/task-status-validation.pipes.ts" />
-        <option value="$PROJECT_DIR$/src/tasks/dto/get-tasks-filter.dto.ts" />
-        <option value="$PROJECT_DIR$/src/tasks/tasks.controller.ts" />
-        <option value="$PROJECT_DIR$/test/app.e2e-spec.ts" />
-        <option value="$PROJECT_DIR$/tslint.json" />
-        <option value="$PROJECT_DIR$/test/tasks/tasks.e2e-spec.ts" />
-        <option value="$PROJECT_DIR$/src/tasks/tasks.module.ts" />
-        <option value="$PROJECT_DIR$/test/tasks/tasks.spec.ts" />
         <option value="$PROJECT_DIR$/src/config/typeorm.config.ts" />
         <option value="$PROJECT_DIR$/src/app.spec.ts" />
         <option value="$PROJECT_DIR$/test/app.spec.ts" />
-        <option value="$PROJECT_DIR$/test/jest-e2e.json" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/test/auth/conf.ts" />
         <option value="$PROJECT_DIR$/test/auth/userAuthorization/conf.ts" />
-        <option value="$PROJECT_DIR$/test/auth/Conf/auth.conf.ts" />
         <option value="$PROJECT_DIR$/test/auth/Conf/update.conf.ts" />
         <option value="$PROJECT_DIR$/tsconfig.json" />
         <option value="$PROJECT_DIR$/src/auth/user.entity.ts" />
-        <option value="$PROJECT_DIR$/test/auth/auth-e2e.spec.ts" />
         <option value="$PROJECT_DIR$/src/auth/auth.controller.spec.ts" />
-        <option value="$PROJECT_DIR$/test/auth/Conf/register.conf.ts" />
-        <option value="$PROJECT_DIR$/src/auth/dto/register.dto.ts" />
         <option value="$PROJECT_DIR$/src/auth/dto/login.dto.ts" />
         <option value="$PROJECT_DIR$/src/auth/constants.ts" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/auth/interface/auth.userifo.interface.ts" />
         <option value="$PROJECT_DIR$/dist/auth/user.repository.js" />
-        <option value="$PROJECT_DIR$/test/auth/register-e2e.spec.ts" />
         <option value="$PROJECT_DIR$/src/auth/socialNetAuth.repository.ts" />
         <option value="$PROJECT_DIR$/src/auth/jwt.stategy.ts" />
         <option value="$PROJECT_DIR$/node_modules/@nestjs/passport/dist/passport.module.d.ts" />
@@ -204,24 +174,40 @@
         <option value="$PROJECT_DIR$/src/auth/facebook.strategy.ts" />
         <option value="$PROJECT_DIR$/src/auth/google.strategy.ts" />
         <option value="$PROJECT_DIR$/src/auth/vk.strategy.ts" />
-        <option value="$PROJECT_DIR$/src/app.module.ts" />
         <option value="$PROJECT_DIR$/src/auth/dto/reset.dto.ts" />
         <option value="$PROJECT_DIR$/src/auth/strategyTS/resetPasswordJwt.strategy.ts" />
         <option value="$PROJECT_DIR$/src/auth/dto/user.info.dto.ts" />
-        <option value="$PROJECT_DIR$/src/auth/auth.module.ts" />
         <option value="$PROJECT_DIR$/src/auth/strategyTS/jwt.strategy.ts" />
-        <option value="$PROJECT_DIR$/src/auth/dto/resetPassword.dto.ts" />
         <option value="$PROJECT_DIR$/src/auth/user.repository.ts" />
-        <option value="$PROJECT_DIR$/src/auth/auth.controller.ts" />
         <option value="$PROJECT_DIR$/src/auth/auth.service.ts" />
+        <option value="$PROJECT_DIR$/test/auth/Conf/auth.conf.ts" />
+        <option value="$PROJECT_DIR$/src/app.module.ts" />
+        <option value="$PROJECT_DIR$/src/auth/auth.module.ts" />
+        <option value="$PROJECT_DIR$/test/auth/Conf/register.conf.ts" />
+        <option value="$PROJECT_DIR$/test/auth/confDetails/recover.ts" />
+        <option value="$PROJECT_DIR$/test/auth/register-e2e.spec.ts" />
+        <option value="$PROJECT_DIR$/test/jest-e2e.json" />
+        <option value="$PROJECT_DIR$/test/auth/confDetails/register.conf.ts" />
+        <option value="$PROJECT_DIR$/test/auth/confDetails/auth.conf.ts" />
+        <option value="$PROJECT_DIR$/test/auth/resetPassword-eye.spec.ts" />
+        <option value="$PROJECT_DIR$/test/auth/confDetails/resetPassword.ts" />
+        <option value="$PROJECT_DIR$/test/auth/resetPassword-e2e.spec.ts" />
+        <option value="$PROJECT_DIR$/src/auth/auth.controller.ts" />
+        <option value="$PROJECT_DIR$/test/auth/auth-e2e.spec.ts" />
+        <option value="$PROJECT_DIR$/test/auth/register/register-e2e.spec.ts" />
+        <option value="$PROJECT_DIR$/test/auth/Login/auth-e2e.spec.ts" />
+        <option value="$PROJECT_DIR$/test/auth/resetPassword/resetPassword.ts" />
+        <option value="$PROJECT_DIR$/src/auth/dto/register.dto.ts" />
+        <option value="$PROJECT_DIR$/src/auth/dto/resetPassword.dto.ts" />
+        <option value="$PROJECT_DIR$/test/auth/resetPassword/resetPassword-e2e.spec.ts" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="y" value="-10" />
-    <option name="width" value="1939" />
-    <option name="height" value="1049" />
+    <option name="x" value="-19" />
+    <option name="y" value="91" />
+    <option name="width" value="1940" />
+    <option name="height" value="795" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -232,6 +218,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -254,13 +241,38 @@
               <item name="nest-app" type="b2602c69:ProjectViewProjectNode" />
               <item name="nest-app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+              <item name="dto" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nest-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nest-app" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nest-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nest-app" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nest-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nest-app" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+              <item name="Login" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nest-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nest-app" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+              <item name="resetPassword" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -279,11 +291,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\NestJSOmega\nest-app\src\auth\strategyTS" />
-      <recent name="D:\NestJSOmega\nest-app\src\auth" />
-      <recent name="D:\NestJSOmega\nest-app\test\auth\Conf" />
+      <recent name="D:\NestJSOmega\nest-app\test\auth\Login" />
+      <recent name="D:\NestJSOmega\nest-app\test\auth\resetPassword" />
+      <recent name="D:\NestJSOmega\nest-app\test\auth\register" />
       <recent name="D:\NestJSOmega\nest-app\test\auth" />
-      <recent name="D:\NestJSOmega\nest-app\test\auth\userRegister" />
+      <recent name="D:\NestJSOmega\nest-app\src\auth\strategyTS" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -298,21 +310,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Jest.User/Register./post User ">
-    <configuration name="Register User./post registerUser" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/test/auth/register-e2e.spec.ts" />
-      <test-names>
-        <test-name value="Register User" />
-        <test-name value="/post registerUser" />
-      </test-names>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Jest.User/ResetPassword">
     <configuration name="User/Register  (e2e)./ (GET)" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -369,6 +367,19 @@
       </test-names>
       <method v="2" />
     </configuration>
+    <configuration name="User/ResetPassword" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/test/auth/resetPassword/resetPassword-e2e.spec.ts" />
+      <test-names>
+        <test-name value="User/ResetPassword" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration name="app.e2e-spec.ts" type="JavaScriptTestRunnerJest" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -391,11 +402,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.User/ResetPassword" />
         <item itemvalue="Jest.User/Register./post User " />
         <item itemvalue="Jest.User/Register./post User" />
         <item itemvalue="Jest.User/Register./post User test1" />
         <item itemvalue="Jest.User/Register  (e2e)./ (GET)" />
-        <item itemvalue="Jest.Register User./post registerUser" />
       </list>
     </recent_temporary>
   </component>
@@ -428,14 +439,12 @@
       <workItem from="1575455994220" duration="1431000" />
       <workItem from="1575458498329" duration="11068000" />
       <workItem from="1575472682042" duration="18000" />
-      <workItem from="1575528421377" duration="5988000" />
+      <workItem from="1575528421377" duration="20759000" />
+      <workItem from="1575614373480" duration="2308000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="User_Register__post_User_test1 - 2019.11.21 at 05h 28m 44s.xml">
-      <configuration name="User/Register./post User test1" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
     <history-entry file="User_Register__post_User_test1 - 2019.11.25 at 02h 18m 18s.xml">
       <configuration name="User/Register./post User test1" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
@@ -463,9 +472,12 @@
     <history-entry file="User_Register__post_User_ - 2019.12.02 at 04h 11m 03s.xml">
       <configuration name="User/Register./post User " configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
+    <history-entry file="User_Register__post_User_ - 2019.12.05 at 04h 14m 58s.xml">
+      <configuration name="User/Register./post User " configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160997000" />
+    <option name="totallyTimeSpent" value="178076000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -478,14 +490,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49904397" visible="true" weight="0.41208053" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49904397" visible="true" weight="0.4181208" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" sideWeight="0.500956" side_tool="true" weight="0.37248322" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7671141" weight="0.42917848" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7671141" weight="0.39660057" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.398017" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -493,9 +506,9 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3286119" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="TypeScript" order="10" sideWeight="0.49798658" weight="0.32719547" />
+      <window_info anchor="bottom" id="TypeScript" order="10" sideWeight="0.49798658" weight="0.16572239" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.45503357" side_tool="true" weight="0.3711048" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.54496646" visible="true" weight="0.42351276" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.54496646" visible="true" weight="0.35410765" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -529,90 +542,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/@nestjs/common/decorators/core/use-guards.decorator.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@nestjs/passport/dist/interfaces/auth-module.options.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@nestjs/passport/dist/passport.module.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="4" column="73" selection-start-line="4" selection-start-column="73" selection-end-line="4" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@types/passport-local/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="43" lean-forward="true" selection-start-column="43" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/passport-google-oauth2/example/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1752" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/passport-google-oauth2/lib/oauth2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-752" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@nestjs/passport/dist/interfaces/type.interface.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="17" selection-start-column="17" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/passport-jwt/lib/strategy.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="70" column="42" selection-start-line="70" selection-start-column="42" selection-end-line="70" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/passport-jwt/lib/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@types/passport/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1496">
-          <caret line="88" column="14" selection-start-line="88" selection-start-column="14" selection-end-line="88" selection-end-column="14" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@types/passport-facebook/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="49" column="45" lean-forward="true" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/@types/passport-jwt/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -661,37 +590,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/auth/Conf/register.conf.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/auth/Conf/recover.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/auth/Conf/auth.conf.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="24" column="16" lean-forward="true" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/auth/register-e2e.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/typeorm/repository/Repository.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="137">
@@ -730,25 +628,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app.controller.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="25" column="20" lean-forward="true" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/auth/user.repository.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="850">
@@ -773,41 +652,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/auth/strategyTS/resetPasswordJwt.strategy.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="21" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/auth/strategyTS/resetPasswordJwt.strategy.ts" />
     <entry file="file://$PROJECT_DIR$/node_modules/@nestjs/passport/dist/auth.guard.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/auth/user.entity.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/auth/constants.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -825,23 +674,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139">
           <caret line="184" column="11" selection-start-line="184" selection-start-column="11" selection-end-line="184" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/auth/dto/register.dto.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" selection-start-line="18" selection-end-line="19" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/auth/auth.controller.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-287">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
-          <folding>
-            <element signature="e#0#104#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -889,27 +721,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/auth/dto/resetPassword.dto.ts">
+    <entry file="file://$PROJECT_DIR$/src/app.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/auth/auth.module.ts">
+    <entry file="file://$PROJECT_DIR$/src/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="198">
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/NodeJS/lib/NodeJS.jar!/com/jetbrains/nodejs/packageJson/packageJsonSchema.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="271" column="12" selection-start-line="271" selection-start-column="12" selection-end-line="271" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nest-cli.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tsconfig.build.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tslint.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/jest-e2e.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="31" lean-forward="true" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/superagent/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="519">
+          <caret line="153" column="8" selection-start-line="153" selection-start-column="8" selection-end-line="153" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app.controller.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/auth/user.repository.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-685">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="299">
+          <caret line="82" column="9" lean-forward="true" selection-start-line="82" selection-start-column="9" selection-end-line="82" selection-end-column="9" />
           <folding>
             <element signature="e#0#53#0" expanded="true" />
           </folding>
@@ -918,10 +801,129 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/auth/auth.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-22">
-          <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+        <state relative-caret-position="527">
+          <caret line="42" column="17" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
           <folding>
             <element signature="e#0#65#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/auth/constants.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/auth/user.entity.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/auth/confDetails/resetLoginDetails.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="36" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/app.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="13" column="21" lean-forward="true" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/auth/dto/register.dto.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" selection-start-line="14" selection-end-line="18" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/auth/dto/resetPassword.dto.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="21" lean-forward="true" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/auth/auth.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="29" column="28" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/auth/auth.controller.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-306">
+          <caret line="33" column="17" lean-forward="true" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/auth/register/register.conf.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="18" column="33" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/auth/register/register-e2e.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1751">
+          <caret line="103" column="52" lean-forward="true" selection-start-line="103" selection-start-column="52" selection-end-line="103" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/auth/Login/auth.conf.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="9" column="17" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/auth/Login/auth-e2e.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="38" column="24" lean-forward="true" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="76" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/auth/resetPassword/resetPassword.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="35" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/auth/resetPassword/resetPassword-e2e.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="59" column="65" selection-start-line="59" selection-start-column="65" selection-end-line="59" selection-end-column="65" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
           </folding>
         </state>
       </provider>

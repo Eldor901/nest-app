@@ -2470,7 +2470,7 @@
         "signature": "a2b176f66f0b708241265fb3b417597c9c9d21912bbb7f5cc00d99af551c2078"
       },
       "../src/auth/auth.controller.ts": {
-        "version": "d7944009094a927dc74876993b5abe9bf0aaaed0859395c88ecdcd57fc08085c",
+        "version": "d10326e0e6c1adef9378287553a9e170149040a922c04ace8cd7535e8f3bcd6a",
         "signature": "836c9960a8fad42ee56e5b27fbfe712811a30bdb7cdfe6bf003eccc7c86c96d6"
       },
       "../src/auth/constants.ts": {
@@ -2506,11 +2506,11 @@
         "signature": "e58cd94645941604748f75ec077560098f7a5938e0bf430e2808b233a37186c9"
       },
       "../src/auth/auth.module.ts": {
-        "version": "400e54ecbfbf0a7a993acb002230c2e91c8aa27998e9351c655a694764b13f4d",
+        "version": "a7a04d510ed32cc1195c5d4e920e529576f714ca9d21877574d447e7261d47a5",
         "signature": "2e5d258cf85349b02b015c3f1b8873c152d182c3819a7ccc3aff16fc3037a5fc"
       },
       "../src/app.module.ts": {
-        "version": "d3d3237131cdd0a2b788269934d2664330980ee6b7d9a531538274a66b56386e",
+        "version": "b021c1bb495ed514f9d096df0f972ed14991c5f135a657fdf1a835866e153697",
         "signature": "9fc7f7b6ad854404973b8cba8e6d883f758237991968e9a3965d716d46f1da88"
       },
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts": {
@@ -9096,6 +9096,7 @@
         "../src/auth/strategyts/jwt.strategy.ts",
         "../src/auth/strategyts/facebook.strategy.ts",
         "../src/auth/strategyts/vk.strategy.ts",
+        "../node_modules/@nest-modules/mailer/dist/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -21705,6 +21706,7 @@
       "../node_modules/@nest-modules/mailer/dist/mailer.service.d.ts",
       "../node_modules/@nest-modules/mailer/dist/index.d.ts",
       "../node_modules/@types/passport/index.d.ts",
+      "../src/auth/auth.service.ts",
       "../node_modules/@nestjs/passport/dist/abstract.strategy.d.ts",
       "../node_modules/@nestjs/passport/dist/interfaces/auth-module.options.d.ts",
       "../node_modules/@nestjs/passport/dist/interfaces/type.interface.d.ts",
@@ -21715,7 +21717,6 @@
       "../node_modules/@nestjs/passport/dist/passport/passport.strategy.d.ts",
       "../node_modules/@nestjs/passport/dist/index.d.ts",
       "../node_modules/@nestjs/passport/index.d.ts",
-      "../src/auth/auth.controller.ts",
       "../src/auth/constants.ts",
       "../src/auth/strategyts/google.strategy.ts",
       "../node_modules/@types/passport-strategy/index.d.ts",
@@ -22047,7 +22048,7 @@
       "../node_modules/@types/webpack/index.d.ts",
       "../node_modules/@types/yargs-parser/index.d.ts",
       "../node_modules/@types/yargs/index.d.ts",
-      "../src/auth/auth.service.ts"
+      "../src/auth/auth.controller.ts"
     ]
   },
   "version": "3.7.2"

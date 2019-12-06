@@ -11,11 +11,28 @@ import {GoogleStrategy} from "./strategyTS/google.strategy";
 import {JwtStrategy} from "./strategyTS/jwt.strategy";
 import {FacebookStrategy} from "./strategyTS/facebook.strategy";
 import {VkStrategy} from "./strategyTS/vk.strategy";
+import {HandlebarsAdapter, MailerModule, MailerService} from "@nest-modules/mailer";
+
 
 @Module({
   imports: [
       PassportModule.register({defaultStrategy: 'jwt'}),
       PassportModule.register({ session: true }),
+      MailerModule.forRootAsync({
+          useFactory: () => ({
+              transport: 'smtps://user@domain.com:pass@smtp.domain.com',
+              defaults: {
+                  from:'"nest-modules" <modules@nestjs.com>',
+              },
+              template: {
+                  dir: __dirname + '/templates',
+                  adapter: new HandlebarsAdapter(), // or new PugAdapter()
+                  options: {
+                      strict: true,
+                  },
+              },
+          }),
+      }),
       JwtModule.register({
           secret: jwtConstants.secret,
           signOptions: { expiresIn: '600s' },

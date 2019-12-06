@@ -70,7 +70,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], AuthController.prototype, "confirm", null);
 __decorate([
-    common_1.Post("/reset"),
+    common_1.Put("/reset"),
     common_1.UseGuards(passport_1.AuthGuard('jwt')),
     __param(0, common_1.Request()), __param(1, common_1.Body(common_1.ValidationPipe)),
     __metadata("design:type", Function),
