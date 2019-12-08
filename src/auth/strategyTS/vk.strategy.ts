@@ -1,6 +1,6 @@
 import {Injectable} from "@nestjs/common";
 import { PassportStrategy } from "@nestjs/passport";
-import {Strategy} from "passport-facebook"
+import {Strategy} from "passport-vkontakte"
 
 @Injectable()
 
@@ -10,10 +10,10 @@ export class VkStrategy extends PassportStrategy(Strategy, 'vk')
     {
         super({
             clientID    : '7227244',
-            clientSecret: '03a5240e03a5240e03a5240edd03cb6362003a503a5240e5e45c17937fd22b09312982a',
+            clientSecret: 'SDxnqAAW2FpjbJm4Hytg',
             callbackURL: 'http://localhost:3000/auth/vk',
             passReqToCallback: true,
-            scope: ['profile']
+            scope: ['']
         } )
     }
 

@@ -19,6 +19,8 @@ const login_dto_1 = require("./dto/login.dto");
 const passport_1 = require("@nestjs/passport");
 const confirmEmail_dto_1 = require("./dto/confirmEmail.dto");
 const resetPassword_dto_1 = require("./dto/resetPassword.dto");
+const updateUser_dto_1 = require("./dto/updateUser.dto");
+const updateUserSetting_dto_1 = require("./dto/updateUserSetting.dto");
 let AuthController = class AuthController {
     constructor(authService) {
         this.authService = authService;
@@ -35,21 +37,27 @@ let AuthController = class AuthController {
     resetPassword(req, resetPasswordDto) {
         return this.authService.resetPassword(req.user.email, resetPasswordDto);
     }
-    googleLogIn(req) {
+    facebookLogIn(req) {
         return req.user;
     }
     vkLogin(req) {
         return req.user;
     }
-    facebookLogIn(req) {
+    googleLogIn(req) {
         return req.user;
     }
     async mainPage(req) {
         return req.user;
     }
+    async updateUser(req, updateUserDto) {
+        return this.authService.updateUser(req.user.email, updateUserDto);
+    }
+    async updateUserSettings(req, updateUserSettingDto) {
+        return this.authService.updateUserSettings(req.user.email, updateUserSettingDto);
+    }
 };
 __decorate([
-    common_1.Post("/register"),
+    common_1.Post("/RegisterUser"),
     __param(0, common_1.Body(common_1.ValidationPipe)),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [register_dto_1.RegisterDto]),
@@ -78,13 +86,13 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], AuthController.prototype, "resetPassword", null);
 __decorate([
-    common_1.Get("/google"),
-    common_1.UseGuards(passport_1.AuthGuard('google')),
+    common_1.Get("/facebook"),
+    common_1.UseGuards(passport_1.AuthGuard('facebook')),
     __param(0, common_1.Request()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
-], AuthController.prototype, "googleLogIn", null);
+], AuthController.prototype, "facebookLogIn", null);
 __decorate([
     common_1.Get("/vk"),
     common_1.UseGuards(passport_1.AuthGuard('vk')),
@@ -94,13 +102,13 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], AuthController.prototype, "vkLogin", null);
 __decorate([
-    common_1.Get("/facebook"),
-    common_1.UseGuards(passport_1.AuthGuard('facebook')),
+    common_1.Get("/google"),
+    common_1.UseGuards(passport_1.AuthGuard('google')),
     __param(0, common_1.Request()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
-], AuthController.prototype, "facebookLogIn", null);
+], AuthController.prototype, "googleLogIn", null);
 __decorate([
     common_1.Post("/mainPage"),
     common_1.UseGuards(passport_1.AuthGuard('jwt')),
@@ -109,6 +117,22 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], AuthController.prototype, "mainPage", null);
+__decorate([
+    common_1.Put("/updateuser"),
+    common_1.UseGuards(passport_1.AuthGuard('jwt')),
+    __param(0, common_1.Request()), __param(1, common_1.Body(common_1.ValidationPipe)),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, updateUser_dto_1.UpdateUserDto]),
+    __metadata("design:returntype", Promise)
+], AuthController.prototype, "updateUser", null);
+__decorate([
+    common_1.Put("/updateUserSettings"),
+    common_1.UseGuards(passport_1.AuthGuard('jwt')),
+    __param(0, common_1.Request()), __param(1, common_1.Body(common_1.ValidationPipe)),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, updateUserSetting_dto_1.UpdateUserSettingDto]),
+    __metadata("design:returntype", Promise)
+], AuthController.prototype, "updateUserSettings", null);
 AuthController = __decorate([
     common_1.Controller('auth'),
     __metadata("design:paramtypes", [auth_service_1.AuthService])

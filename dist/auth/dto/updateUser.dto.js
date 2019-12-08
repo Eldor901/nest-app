@@ -9,37 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const typeorm_1 = require("typeorm");
-const user_setting_interface_1 = require("./interface/user-setting.interface");
-let User = class User extends typeorm_1.BaseEntity {
-};
+const class_validator_1 = require("class-validator");
+class UpdateUserDto {
+}
 __decorate([
-    typeorm_1.PrimaryGeneratedColumn(),
-    __metadata("design:type", Number)
-], User.prototype, "id", void 0);
-__decorate([
-    typeorm_1.Column(),
+    class_validator_1.IsNotEmpty(),
     __metadata("design:type", String)
-], User.prototype, "name", void 0);
+], UpdateUserDto.prototype, "name", void 0);
 __decorate([
-    typeorm_1.Column(),
+    class_validator_1.MinLength(6, {
+        message: "Your password should contain at least 6 character",
+    }),
+    class_validator_1.IsNotEmpty(),
     __metadata("design:type", String)
-], User.prototype, "email", void 0);
-__decorate([
-    typeorm_1.Column(),
-    __metadata("design:type", String)
-], User.prototype, "password", void 0);
-__decorate([
-    typeorm_1.Column(),
-    __metadata("design:type", String)
-], User.prototype, "salt", void 0);
-__decorate([
-    typeorm_1.Column(),
-    __metadata("design:type", String)
-], User.prototype, "user_type", void 0);
-User = __decorate([
-    typeorm_1.Entity(),
-    typeorm_1.Unique(['email'])
-], User);
-exports.User = User;
-//# sourceMappingURL=user.entity.js.map
+], UpdateUserDto.prototype, "password", void 0);
+exports.UpdateUserDto = UpdateUserDto;
+//# sourceMappingURL=updateUser.dto.js.map

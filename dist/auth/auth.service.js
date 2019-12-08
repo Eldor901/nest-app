@@ -13,6 +13,7 @@ const common_1 = require("@nestjs/common");
 const user_repository_1 = require("./user.repository");
 const jwt_1 = require("@nestjs/jwt");
 const mailer_1 = require("@nest-modules/mailer");
+const user_setting_interface_1 = require("./interface/user-setting.interface");
 let AuthService = class AuthService {
     constructor(userRepository, jwtService, mailerService) {
         this.userRepository = userRepository;
@@ -39,7 +40,7 @@ let AuthService = class AuthService {
         this
             .mailerService
             .sendMail({
-            to: 'Eldor3143848@gmail.com',
+            to: 'eldor3143848@gmail.com',
             from: 'omega',
             subject: 'Testing Nest Mailermodule with template ✔',
             template: __dirname + '/welcome',
@@ -54,6 +55,18 @@ let AuthService = class AuthService {
     }
     async resetPassword(email, resetPasswordDto) {
         return this.userRepository.ChangePassword(email, resetPasswordDto);
+    }
+    async updateUser(email, updatePasswprdDto) {
+        return this.userRepository.UpdateUser(email, updatePasswprdDto);
+    }
+    async updateUserSettings(email, updateUserSettingDto) {
+        const user = await this.userRepository.findEmail(email);
+        if (!user)
+            throw new common_1.UnauthorizedException("invalid email. You haven't registered yet");
+        if (user.user_type !== user_setting_interface_1.UserType.ADMIN) {
+            throw new common_1.BadRequestException("You dont have rights of admin");
+        }
+        return this.userRepository.updateUserSettings(updateUserSettingDto);
     }
 };
 AuthService = __decorate([

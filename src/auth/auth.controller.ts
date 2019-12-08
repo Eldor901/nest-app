@@ -5,6 +5,8 @@ import {LoginDto} from "./dto/login.dto";
 import {AuthGuard} from "@nestjs/passport";
 import { ConfirmEmailDto} from "./dto/confirmEmail.dto";
 import {ResetPasswordDto} from "./dto/resetPassword.dto";
+import {UpdateUserDto} from "./dto/updateUser.dto";
+import {UpdateUserSettingDto} from "./dto/updateUserSetting.dto";
 
 @Controller('auth')
 export class AuthController {
@@ -13,7 +15,7 @@ export class AuthController {
       private authService:AuthService
     ){}
 
-   @Post("/register")
+   @Post("/RegisterUser")
    async register(@Body(ValidationPipe) registerDto:RegisterDto): Promise<void>{
         return this.authService.register(registerDto);
    }
@@ -38,9 +40,10 @@ export class AuthController {
       return this.authService.resetPassword(req.user.email, resetPasswordDto);
    }
 
-   @Get("/google")
-   @UseGuards(AuthGuard('google'))
-   googleLogIn(@Request() req)
+
+   @Get("/facebook")
+   @UseGuards(AuthGuard('facebook'))
+   facebookLogIn(@Request() req)
    {
        return req.user;
    }
@@ -53,12 +56,12 @@ export class AuthController {
     }
 
 
-   @Get("/facebook")
-   @UseGuards(AuthGuard('facebook'))
-   facebookLogIn(@Request() req)
-   {
-       return req.user;
-   }
+    @Get("/google")
+    @UseGuards(AuthGuard('google'))
+    googleLogIn(@Request() req)
+    {
+        return req.user;
+    }
 
     @Post("/mainPage")
     @UseGuards(AuthGuard('jwt'))
@@ -67,4 +70,17 @@ export class AuthController {
         return req.user;
     }
 
+    @Put("/updateuser")
+    @UseGuards(AuthGuard('jwt'))
+    async updateUser(@Request() req, @Body(ValidationPipe) updateUserDto: UpdateUserDto)
+    {
+        return this.authService.updateUser(req.user.email, updateUserDto);
+    }
+
+    @Put("/updateUserSettings")
+    @UseGuards(AuthGuard('jwt'))
+    async updateUserSettings(@Request() req, @Body(ValidationPipe) updateUserSettingDto: UpdateUserSettingDto)
+    {
+        return this.authService.updateUserSettings(req.user.email, updateUserSettingDto);
+    }
 }

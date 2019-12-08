@@ -22,5 +22,4 @@ export class FacebookStrategy extends PassportStrategy(Strategy, 'facebook')
     {
         return profile;
     }
-
 }

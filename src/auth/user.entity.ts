@@ -1,4 +1,5 @@
 import {BaseEntity, Column, Entity, PrimaryGeneratedColumn, Unique} from "typeorm";
+import {UserType} from "./interface/user-setting.interface";
 
 @Entity()
 @Unique(['email'])
@@ -18,4 +19,7 @@ export class User extends BaseEntity {
 
     @Column()
     salt: string;
+
+    @Column()
+    user_type: UserType;
 }

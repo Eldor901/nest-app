@@ -4,7 +4,7 @@ import {Test, TestingModule} from '@nestjs/testing';
 import {AuthModule} from "../../../src/auth/auth.module";
 import {typeOrmConfig} from "../../../src/config/typeorm.config";
 import { TypeOrmModule } from '@nestjs/typeorm';
-import {UserRegisterTestSucces} from "../register/register.conf";
+import {UserRegisterTestSucces} from "../RegisterUser/register.conf";
 import {AutheredUsersGiveAccsess} from "./auth.conf";
 import {ForbitAcess} from "./auth.conf";
 

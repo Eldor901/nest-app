@@ -13,6 +13,9 @@ const class_validator_1 = require("class-validator");
 class ResetPasswordDto {
 }
 __decorate([
+    class_validator_1.MinLength(6, {
+        message: "Your password should contain at least 6 character",
+    }),
     class_validator_1.IsNotEmpty(),
     __metadata("design:type", String)
 ], ResetPasswordDto.prototype, "password", void 0);

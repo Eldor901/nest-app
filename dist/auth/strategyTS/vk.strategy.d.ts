@@ -1,4 +1,4 @@
-import { Strategy } from "passport-facebook";
+import { Strategy } from "passport-vkontakte";
 declare const VkStrategy_base: new (...args: any[]) => Strategy;
 export declare class VkStrategy extends VkStrategy_base {
     constructor();

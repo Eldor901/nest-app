@@ -28,11 +28,11 @@ describe('User/Register', () => {
         await app.init();
     });
 
-    describe('Should Successfully register', function () {
+    describe('Should Successfully RegisterUser', function () {
         for(let i:number = 0; i < UserRegisterTestSucces.length; i++) {
             it(`user at element ${i} registered`, () => {
                    return  request(app.getHttpServer())
-                    .post('/auth/register')
+                    .post('/auth/RegisterUser')
                     .send(UserRegisterTestSucces[i])
                     .expect(201)
             });
@@ -45,7 +45,7 @@ describe('User/Register', () => {
 
             it(`/post User test with empty name column`, () => {
                 return request(app.getHttpServer())
-                .post('/auth/register')
+                .post('/auth/RegisterUser')
                 .send(UserRegisterTestForbit[0])
                 .expect(400)
                 .then(response => {
@@ -56,7 +56,7 @@ describe('User/Register', () => {
 
             it(`/post User test with empty email column`, () => {
                 return request(app.getHttpServer())
-                    .post('/auth/register')
+                    .post('/auth/RegisterUser')
                     .send(UserRegisterTestForbit[1])
                     .expect(400)
                     .then(response => {
@@ -68,7 +68,7 @@ describe('User/Register', () => {
 
             it(`/post User test with empty password column`, () => {
                 return request(app.getHttpServer())
-                    .post('/auth/register')
+                    .post('/auth/RegisterUser')
                     .send(UserRegisterTestForbit[2])
                     .expect(400)
                     .then(response => {
@@ -80,7 +80,7 @@ describe('User/Register', () => {
 
         it(`/post User test with  at least 6 character in password column`, () => {
             return request(app.getHttpServer())
-                .post('/auth/register')
+                .post('/auth/RegisterUser')
                 .send(UserRegisterTestForbit[3])
                 .expect(400)
                 .then(response => {
@@ -93,7 +93,7 @@ describe('User/Register', () => {
 
         it(`/All column check: empty, at least6 character, not valid email`, () => {
             return request(app.getHttpServer())
-                .post('/auth/register')
+                .post('/auth/RegisterUser')
                 .send(UserRegisterTestForbit[4])
                 .expect(400)
                 .then(response => {
@@ -109,10 +109,10 @@ describe('User/Register', () => {
 
     });
 
-    describe('Should Successfully register', function () {
+    describe('Should Successfully RegisterUser', function () {
         it(`/post registered  User`, () => {
             return request(app.getHttpServer())
-                .post('/auth/register')
+                .post('/auth/RegisterUser')
                 .send(UserRegisterTestSucces[0])
                 .expect(500)
         });

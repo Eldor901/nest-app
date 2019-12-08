@@ -11,6 +11,7 @@ const user_entity_1 = require("./user.entity");
 const common_1 = require("@nestjs/common");
 const bcrypt_1 = require("bcrypt");
 const user_info_dto_1 = require("./dto/user.info.dto");
+const user_setting_interface_1 = require("./interface/user-setting.interface");
 let UserRepository = class UserRepository extends typeorm_1.Repository {
     async m_hashpassword(password, hashing) {
         return bcrypt_1.hash(password, hashing);
@@ -22,6 +23,7 @@ let UserRepository = class UserRepository extends typeorm_1.Repository {
         user.email = email;
         user.salt = await bcrypt_1.genSalt();
         user.password = await this.m_hashpassword(password, user.salt);
+        user.user_type = user_setting_interface_1.UserType.USER;
         try {
             await user.save();
         }
@@ -50,7 +52,6 @@ let UserRepository = class UserRepository extends typeorm_1.Repository {
     async ChangePassword(email, resetPasswordDto) {
         const user = await this.findEmail(email);
         const { password } = resetPasswordDto;
-        console.log(password);
         user.salt = await bcrypt_1.genSalt();
         user.password = await this.m_hashpassword(password, user.salt);
         try {
@@ -58,6 +59,34 @@ let UserRepository = class UserRepository extends typeorm_1.Repository {
         }
         catch (err) {
             throw new common_1.InternalServerErrorException("password is not changed");
+        }
+    }
+    async UpdateUser(email, updateUserDto) {
+        const user = await this.findEmail(email);
+        const { name, password } = updateUserDto;
+        await this.ChangePassword(email, { password });
+        user.name = name;
+        try {
+            await user.save();
+        }
+        catch (err) {
+            throw new common_1.InternalServerErrorException("password is not changed");
+        }
+    }
+    async updateUserSettings(updateUserSettingDto) {
+        const { email, user_type } = updateUserSettingDto;
+        const user = await this.findEmail(email);
+        if (!user) {
+            throw new common_1.UnauthorizedException("this kind of email doesnt exists");
+        }
+        if (!(user_type in user_setting_interface_1.UserType))
+            throw new common_1.BadRequestException(`UserType: '${user_type}' does not exists`);
+        user.user_type = user_type;
+        try {
+            await user.save();
+        }
+        catch (err) {
+            throw new common_1.InternalServerErrorException("user type is not changed");
         }
     }
 };

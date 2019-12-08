@@ -1,11 +1,14 @@
 import {EntityRepository, Repository} from "typeorm";
 import {User} from "./user.entity";
 import {RegisterDto} from "./dto/register.dto";
-import {InternalServerErrorException} from "@nestjs/common";
+import {BadRequestException, InternalServerErrorException, UnauthorizedException} from "@nestjs/common";
 import {genSalt, hash} from "bcrypt"
 import {LoginDto} from "./dto/login.dto";
 import {UserInfo} from "./dto/user.info.dto";
 import {ResetPasswordDto} from "./dto/resetPassword.dto";
+import {UpdateUserDto} from "./dto/updateUser.dto";
+import {UserType} from "./interface/user-setting.interface";
+import {UpdateUserSettingDto} from "./dto/updateUserSetting.dto";
 
 @EntityRepository(User)
 export class UserRepository extends Repository<User>{
@@ -24,7 +27,7 @@ export class UserRepository extends Repository<User>{
 
         user.salt  = await genSalt();
         user.password = await this.m_hashpassword(password, user.salt);
-
+        user.user_type = UserType.USER;
 
         try {
             await user.save();
@@ -69,7 +72,6 @@ export class UserRepository extends Repository<User>{
 
         const {password} = resetPasswordDto;
 
-        console.log(password);
         user.salt = await genSalt();
 
         user.password = await this.m_hashpassword(password, user.salt);
@@ -80,6 +82,49 @@ export class UserRepository extends Repository<User>{
         }
         catch(err){
             throw new InternalServerErrorException("password is not changed");
+        }
+    }
+
+
+    async UpdateUser(email:string, updateUserDto:UpdateUserDto):Promise<void>
+    {
+        const user: User = await this.findEmail(email);
+
+        const {name, password} = updateUserDto;
+
+        await this.ChangePassword(email, {password});
+
+        user.name = name;
+        try {
+            await user.save();
+        }
+        catch(err){
+            throw new InternalServerErrorException("password is not changed");
+        }
+
+    }
+
+    async updateUserSettings(updateUserSettingDto:UpdateUserSettingDto):Promise<void>
+    {
+        const {email, user_type} = updateUserSettingDto;
+
+        const user: User =  await this.findEmail(email);
+
+        if (!user)
+        {
+            throw new UnauthorizedException("this kind of email doesnt exists");
+        }
+
+        if (!(user_type in UserType))
+            throw new BadRequestException(`UserType: '${user_type}' does not exists`);
+
+        user.user_type = user_type;
+
+        try {
+            await user.save();
+        }
+        catch(err){
+            throw new InternalServerErrorException("user type is not changed");
         }
     }
 }
