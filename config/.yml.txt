@@ -1,0 +1,18 @@
+Yaml syntax have been chosen/  .yml
+
+server:
+  port:
+
+db:
+  type:
+  port:
+  username:
+  password:
+  database_name:
+  host:
+
+SendMailer:
+  host:
+  port:
+  user:
+  pass:

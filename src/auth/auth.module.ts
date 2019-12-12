@@ -6,13 +6,15 @@ import {UserRepository} from "./user.repository";
 import {User} from "./user.entity";
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
-import { jwtConstants } from './constants';
 import {GoogleStrategy} from "./strategyTS/google.strategy";
 import {JwtStrategy} from "./strategyTS/jwt.strategy";
 import {FacebookStrategy} from "./strategyTS/facebook.strategy";
 import {VkStrategy} from "./strategyTS/vk.strategy";
 import {HandlebarsAdapter, MailerModule, MailerService} from "@nest-modules/mailer";
+import * as config from 'config';
 
+const SendMailer = config.get('SendMailer');
+const jwtConf = config.get('jwt');
 
 @Module({
   imports: [
@@ -20,22 +22,22 @@ import {HandlebarsAdapter, MailerModule, MailerService} from "@nest-modules/mail
       PassportModule.register({ session: true }),
       MailerModule.forRootAsync({
           useFactory: () => ({
-              transport: 'smtps://user@domain.com:pass@smtp.domain.com',
+              transport: {
+                host: SendMailer.host,
+                port: SendMailer.port,
+                auth:{
+                    user: SendMailer.user,
+                    pass: SendMailer.pass,
+                }
+              },
               defaults: {
                   from:'"nest-modules" <modules@nestjs.com>',
-              },
-              template: {
-                  dir: __dirname + '/templates',
-                  adapter: new HandlebarsAdapter(), // or new PugAdapter()
-                  options: {
-                      strict: true,
-                  },
-              },
+              }
           }),
       }),
       JwtModule.register({
-          secret: jwtConstants.secret,
-          signOptions: { expiresIn: '600s' },
+          secret: jwtConf.secret,
+          signOptions: { expiresIn: jwtConf.expiresTime },
       }),
       TypeOrmModule.forFeature([User, UserRepository]),
   ],

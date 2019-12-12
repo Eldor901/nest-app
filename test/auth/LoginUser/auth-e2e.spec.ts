@@ -30,14 +30,13 @@ describe('User/Auth', () => {
     describe('Successful authorization ', function () {
         for(let i:number = 0; i < AutheredUsersGiveAccsess.length; i++) {
 
-            it(`user at element ${i} registered`, () => {
+            it(`user at element ${i} logged in`, () => {
                 return  request(app.getHttpServer())
                     .post('/auth/login')
                     .send(AutheredUsersGiveAccsess[i])
                     .expect(201)
                     .then(response => {
                         expect(response.body).toHaveProperty('accessToken');
-                        console.log(response.body.accessToken);
                     })
             });
         }

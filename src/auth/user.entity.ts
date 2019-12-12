@@ -1,5 +1,5 @@
 import {BaseEntity, Column, Entity, PrimaryGeneratedColumn, Unique} from "typeorm";
-import {UserType} from "./interface/user-setting.interface";
+import {UpdateUserSettingDto, UserType} from "./dto/updateUserSetting.dto";
 
 @Entity()
 @Unique(['email'])

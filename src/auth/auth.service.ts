@@ -9,9 +9,8 @@ import {ConfirmEmailDto} from "./dto/confirmEmail.dto";
 import {MailerService} from '@nest-modules/mailer';
 import {ResetPasswordDto} from "./dto/resetPassword.dto";
 import {UpdateUserDto} from "./dto/updateUser.dto";
-import {UpdateUserSettingDto} from "./dto/updateUserSetting.dto";
+import {UpdateUserSettingDto, UserType} from "./dto/updateUserSetting.dto";
 import {User} from "./user.entity";
-import {UserType} from "./interface/user-setting.interface";
 
 @Injectable()
 export class AuthService {
@@ -22,7 +21,7 @@ export class AuthService {
 
     ){}
 
-    async register(registerDto: RegisterDto): Promise<void>
+    async register(registerDto: RegisterDto): Promise<{userId: number}>
     {
         return this.userRepository.register(registerDto);
     }
@@ -31,14 +30,14 @@ export class AuthService {
     {
         const userInfo: UserInfo = await this.userRepository.Validatelogin(loginDto);
 
-
         if(!userInfo)
         {
             throw new UnauthorizedException("invalid email or password")
         }
-
         const payload: JwtPayload  = { email: userInfo.email, name: userInfo.name };
+
         const accessToken: string = await this.jwtService.sign(payload);
+
         return {accessToken};
     }
 
@@ -57,29 +56,28 @@ export class AuthService {
                 to: 'eldor3143848@gmail.com',
                 from: 'omega',
                 subject: 'Testing Nest Mailermodule with template ✔',
-                template: __dirname + '/welcome', // The `.pug` or `.hbs` extension is appended automatically.
-                context: {  // Data to be sent to template engine.
-                    code: 'cf1a3f828287',
-                    username: 'john doe',
+                context: { 
+                    text: 'Link to change password',
+                    username: 'OmegaR',
                 },
             })
             .then(() => {})
-            .catch(() => {});
+            .catch((e) => {console.log(e)});
 
         return confirmEmailDto;
     }
 
-    async resetPassword( email:string, resetPasswordDto: ResetPasswordDto):Promise<void>
+    async resetPassword( email:string, resetPasswordDto: ResetPasswordDto):Promise<{userId: number}>
     {
-        return this.userRepository.ChangePassword(email, resetPasswordDto);
+         return await this.userRepository.ChangePassword(email, resetPasswordDto);
     }
 
-    async updateUser(email:string, updatePasswprdDto: UpdateUserDto):Promise<void>
+    async updateUser(email:string, updatePasswprdDto: UpdateUserDto):Promise<{userId: number}>
     {
         return this.userRepository.UpdateUser(email, updatePasswprdDto);
     }
 
-    async updateUserSettings(email:string,updateUserSettingDto:UpdateUserSettingDto):Promise<void>
+    async updateUserSettings(email:string,updateUserSettingDto:UpdateUserSettingDto):Promise<{userId: number}>
     {
         const user: User = await this.userRepository.findEmail(email);
 

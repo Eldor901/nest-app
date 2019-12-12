@@ -1,5 +1,10 @@
 import {IsEmail, IsNotEmpty, MinLength} from "class-validator";
-import {UserType} from "../interface/user-setting.interface";
+
+export enum UserType {
+    MODERATOR = 'MODERATOR',
+    ADMIN = 'ADMIN',
+    USER = 'USER',
+}
 
 export class UpdateUserSettingDto{
     @IsEmail({},
@@ -12,3 +17,5 @@ export class UpdateUserSettingDto{
     @IsNotEmpty()
     user_type: UserType;
 }
+
+

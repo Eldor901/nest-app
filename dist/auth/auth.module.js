@@ -14,12 +14,14 @@ const user_repository_1 = require("./user.repository");
 const user_entity_1 = require("./user.entity");
 const passport_1 = require("@nestjs/passport");
 const jwt_1 = require("@nestjs/jwt");
-const constants_1 = require("./constants");
 const google_strategy_1 = require("./strategyTS/google.strategy");
 const jwt_strategy_1 = require("./strategyTS/jwt.strategy");
 const facebook_strategy_1 = require("./strategyTS/facebook.strategy");
 const vk_strategy_1 = require("./strategyTS/vk.strategy");
 const mailer_1 = require("@nest-modules/mailer");
+const config = require("config");
+const SendMailer = config.get('SendMailer');
+const jwtConf = config.get('jwt');
 let AuthModule = class AuthModule {
 };
 AuthModule = __decorate([
@@ -29,22 +31,22 @@ AuthModule = __decorate([
             passport_1.PassportModule.register({ session: true }),
             mailer_1.MailerModule.forRootAsync({
                 useFactory: () => ({
-                    transport: 'smtps://user@domain.com:pass@smtp.domain.com',
+                    transport: {
+                        host: SendMailer.host,
+                        port: SendMailer.port,
+                        auth: {
+                            user: SendMailer.user,
+                            pass: SendMailer.pass,
+                        }
+                    },
                     defaults: {
                         from: '"nest-modules" <modules@nestjs.com>',
-                    },
-                    template: {
-                        dir: __dirname + '/templates',
-                        adapter: new mailer_1.HandlebarsAdapter(),
-                        options: {
-                            strict: true,
-                        },
-                    },
+                    }
                 }),
             }),
             jwt_1.JwtModule.register({
-                secret: constants_1.jwtConstants.secret,
-                signOptions: { expiresIn: '600s' },
+                secret: jwtConf.secret,
+                signOptions: { expiresIn: jwtConf.expiresTime },
             }),
             typeorm_1.TypeOrmModule.forFeature([user_entity_1.User, user_repository_1.UserRepository]),
         ],

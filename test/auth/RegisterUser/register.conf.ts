@@ -14,6 +14,9 @@ export let UserRegisterTestSucces: UserRegister[] = [
     {
         name: "1jack", email: "jack1@gmail.com", password: "OneTwoThree",
     },
+    {
+        name: "Bob", email: "bob@gmail.com", password: "12345678",
+    },
 ];
 
 export let UserRegisterTestForbit: UserRegister[] =[

@@ -7,7 +7,7 @@ import {LoginDto} from "./dto/login.dto";
 import {UserInfo} from "./dto/user.info.dto";
 import {ResetPasswordDto} from "./dto/resetPassword.dto";
 import {UpdateUserDto} from "./dto/updateUser.dto";
-import {UserType} from "./interface/user-setting.interface";
+import {UserType} from "./dto/updateUserSetting.dto";
 import {UpdateUserSettingDto} from "./dto/updateUserSetting.dto";
 
 @EntityRepository(User)
@@ -18,10 +18,10 @@ export class UserRepository extends Repository<User>{
         return hash(password, hashing);
     }
 
-    async register(registerDto: RegisterDto): Promise<void>{
+    async register(registerDto: RegisterDto): Promise<{userId: number}>{
         const{name, email, password} = registerDto;
 
-        const user = new User();
+        const user: User = new User();
         user.name = name;
         user.email = email;
 
@@ -31,6 +31,7 @@ export class UserRepository extends Repository<User>{
 
         try {
             await user.save();
+            return {userId: user.id};
         }
         catch(err){
             throw new InternalServerErrorException("This kind of email is already exists");
@@ -49,6 +50,7 @@ export class UserRepository extends Repository<User>{
         const {email, password} = loginDto;
         const user = await this.findEmail(email);
 
+
         if (user) {
             let salt: string = user.salt;
             let passwordCheck = await this.m_hashpassword(password, salt);
@@ -66,9 +68,14 @@ export class UserRepository extends Repository<User>{
         return null;
     }
 
-    async ChangePassword(email:string, resetPasswordDto:ResetPasswordDto): Promise<void>
+    async ChangePassword(email:string, resetPasswordDto:ResetPasswordDto): Promise<{userId: number}>
     {
         const user: User  =  await this.findEmail(email);
+
+        if (!user)
+        {
+            throw new UnauthorizedException("this kind of email doesnt exists");
+        }
 
         const {password} = resetPasswordDto;
 
@@ -76,9 +83,9 @@ export class UserRepository extends Repository<User>{
 
         user.password = await this.m_hashpassword(password, user.salt);
 
-
         try {
             await user.save();
+            return {userId: user.id}
         }
         catch(err){
             throw new InternalServerErrorException("password is not changed");
@@ -86,7 +93,7 @@ export class UserRepository extends Repository<User>{
     }
 
 
-    async UpdateUser(email:string, updateUserDto:UpdateUserDto):Promise<void>
+    async UpdateUser(email:string, updateUserDto:UpdateUserDto):Promise<{userId: number}>
     {
         const user: User = await this.findEmail(email);
 
@@ -97,6 +104,7 @@ export class UserRepository extends Repository<User>{
         user.name = name;
         try {
             await user.save();
+            return {userId: user.id}
         }
         catch(err){
             throw new InternalServerErrorException("password is not changed");
@@ -104,7 +112,7 @@ export class UserRepository extends Repository<User>{
 
     }
 
-    async updateUserSettings(updateUserSettingDto:UpdateUserSettingDto):Promise<void>
+    async updateUserSettings(updateUserSettingDto:UpdateUserSettingDto):Promise<{userId: number}>
     {
         const {email, user_type} = updateUserSettingDto;
 
@@ -122,6 +130,7 @@ export class UserRepository extends Repository<User>{
 
         try {
             await user.save();
+            return {userId: user.id};
         }
         catch(err){
             throw new InternalServerErrorException("user type is not changed");

@@ -16,7 +16,7 @@ export class AuthController {
     ){}
 
    @Post("/RegisterUser")
-   async register(@Body(ValidationPipe) registerDto:RegisterDto): Promise<void>{
+   async register(@Body(ValidationPipe) registerDto:RegisterDto): Promise<{userId: number}>{
         return this.authService.register(registerDto);
    }
 
@@ -33,9 +33,9 @@ export class AuthController {
        return this.authService.confirmEmail(confirmEmailDto);
    }
 
-   @Put("/reset")
+   @Put("/resetPassword")
    @UseGuards(AuthGuard('jwt'))
-   resetPassword(@Request() req, @Body(ValidationPipe) resetPasswordDto:ResetPasswordDto):Promise<void>
+   resetPassword(@Request() req, @Body(ValidationPipe) resetPasswordDto:ResetPasswordDto):Promise<{userId: number}>
    {
       return this.authService.resetPassword(req.user.email, resetPasswordDto);
    }
@@ -72,14 +72,14 @@ export class AuthController {
 
     @Put("/updateuser")
     @UseGuards(AuthGuard('jwt'))
-    async updateUser(@Request() req, @Body(ValidationPipe) updateUserDto: UpdateUserDto)
+    async updateUser(@Request() req, @Body(ValidationPipe) updateUserDto: UpdateUserDto):Promise<{userId: number}>
     {
         return this.authService.updateUser(req.user.email, updateUserDto);
     }
 
     @Put("/updateUserSettings")
     @UseGuards(AuthGuard('jwt'))
-    async updateUserSettings(@Request() req, @Body(ValidationPipe) updateUserSettingDto: UpdateUserSettingDto)
+    async updateUserSettings(@Request() req, @Body(ValidationPipe) updateUserSettingDto: UpdateUserSettingDto):Promise<{userId: number}>
     {
         return this.authService.updateUserSettings(req.user.email, updateUserSettingDto);
     }

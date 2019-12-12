@@ -5,7 +5,9 @@ import {AuthModule} from "../../../src/auth/auth.module";
 import {typeOrmConfig} from "../../../src/config/typeorm.config";
 import { TypeOrmModule } from '@nestjs/typeorm';
 import {ChangeUserPassword} from "../ResetPasswordUser/resetPassword";
-import {UpdateExistingLogin} from "./updateUser.conf";
+import {ForbitUpdating, UpdateExistingLogin} from "./updateUser.conf";
+import {ForbitAcess} from "../LoginUser/auth.conf";
+import {jwtToben} from "../Constants";
 
 
 
@@ -28,17 +30,59 @@ describe('User/ResetPassword', () => {
     });
 
     describe('Update User', function () {
-        const token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVsZG9yOTAxMjU0NUBnbWFpbC5jb20iLCJuYW1lIjoiZWxkb3IiLCJpYXQiOjE1NzU1NTU4NzksImV4cCI6MTU3NTU1NjQ3OX0.-tSCizPTT3Ado-LcGF5Y6Xmb2aGSE6BnKUdE6_lkE1I';
         it(`updateExsitingUser`, () => {
             return  request(app.getHttpServer())
                 .put('/auth/updateuser')
-                .set({Authorization: token})
+                .set({Authorization: jwtToben.token})
                 .send(UpdateExistingLogin[0])
                 .expect(200)
                 .then(response => {
+                    expect(response.body).toHaveProperty('userId');
                 })
         });
     });
+
+    describe('Update User', function () {
+        it(`unknown User`, () => {
+            return  request(app.getHttpServer())
+                .put('/auth/updateuser')
+                .set({Authorization: jwtToben.token + "a"})
+                .send(UpdateExistingLogin[1])
+                .expect(401)
+                .then(response => {
+                    expect(response.body).toHaveProperty('error');
+                })
+        });
+    });
+
+    describe('Update User', function () {
+        it(`Exaption Error password `, () => {
+            return  request(app.getHttpServer())
+                .put('/auth/updateuser')
+                .set({Authorization: jwtToben.token})
+                .send(ForbitUpdating[0])
+                .expect(400)
+                .then(response => {
+                    expect(response.body).toHaveProperty('message');
+                    expect(response.body).toHaveProperty('error');
+                })
+        });
+    });
+
+    describe('Update User', function () {
+        it(`Exaption Error password, name`, () => {
+            return  request(app.getHttpServer())
+                .put('/auth/updateuser')
+                .set({Authorization: jwtToben.token})
+                .send(ForbitUpdating[1])
+                .expect(400)
+                .then(response => {
+                    expect(response.body).toHaveProperty('message');
+                    expect(response.body).toHaveProperty('error');
+                })
+        });
+    });
+
 
 
     afterAll(async () => {

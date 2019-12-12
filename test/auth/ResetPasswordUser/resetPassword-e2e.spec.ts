@@ -10,6 +10,7 @@ import {
 } from "../RegisterUser/register.conf";
 import {ForbitAcess} from "../LoginUser/auth.conf";
 import {ChangeUserPassword, ForbitUserChangePassword} from "./resetPassword";
+import {jwtToben} from "../Constants";
 
 
 
@@ -32,26 +33,38 @@ describe('User/ResetPassword', () => {
 
 
 
-    describe('Update User', function () {
-        const token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVsZG9yOTAxMjU0NUBnbWFpbC5jb20iLCJuYW1lIjoiZWxkb3IiLCJpYXQiOjE1NzU1NTU4NzksImV4cCI6MTU3NTU1NjQ3OX0.-tSCizPTT3Ado-LcGF5Y6Xmb2aGSE6BnKUdE6_lkE1I';
+    describe('Update User Password', function () {
         it(`changes Success`, () => {
             return  request(app.getHttpServer())
-                .put('/auth/reset')
-                .set({Authorization: token})
+                .put('/auth/resetPassword')
+                .set({Authorization: jwtToben.token})
                 .send(ChangeUserPassword[0])
                 .expect(200)
                 .then(response => {
+                   expect(response.body).toHaveProperty('userId');
+                })
+        });
+    });
+
+    describe('Update User Password', function () {
+        it(`user forbit. Unknown user`, () => {
+            return  request(app.getHttpServer())
+                .put('/auth/resetPassword')
+                .set({Authorization: jwtToben.token + 'a'})
+                .send(ChangeUserPassword[0])
+                .expect(401)
+                .then(response => {
+                    expect(response.body).toHaveProperty('error');
                 })
         });
     });
 
 
-    describe('Update User', function () {
-        const token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVsZG9yOTAxMjU0NUBnbWFpbC5jb20iLCJuYW1lIjoiZWxkb3IiLCJpYXQiOjE1NzU1NTU4NzksImV4cCI6MTU3NTU1NjQ3OX0.-tSCizPTT3Ado-LcGF5Y6Xmb2aGSE6BnKUdE6_lkE1I';
-        it(`user forbit unknow user`, () => {
+    describe('Update User Password', function () {
+        it(`user forbit . password exception`, () => {
             return  request(app.getHttpServer())
-                .put('/auth/reset')
-                .set({Authorization: token})
+                .put('/auth/resetPassword')
+                .set({Authorization: jwtToben.token})
                 .send(ForbitUserChangePassword[0])
                 .expect(400)
                 .then(response => {
@@ -60,7 +73,6 @@ describe('User/ResetPassword', () => {
                 })
         });
     });
-
 
 
     afterAll(async () => {

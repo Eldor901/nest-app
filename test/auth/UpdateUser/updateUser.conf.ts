@@ -12,14 +12,14 @@ export let UpdateExistingLogin: Login[]= [
     },
     {
         name: "Eldor1", password: '12345678'
-    }
+    },
 ];
 
 export let ForbitUpdating: Login[]= [
     {
-        name: "John",  password: 'somePassword'
+        name: "John",  password: 'some'
     },
     {
-        name: "Eldor10",  password: '1234'
+        name: "",  password: '1234'
     },
 ];

@@ -35,13 +35,16 @@ describe('User/Register', () => {
                     .post('/auth/RegisterUser')
                     .send(UserRegisterTestSucces[i])
                     .expect(201)
+                       .then(response => {
+                           expect(response.body).toHaveProperty('userId');
+                       })
             });
         }
     });
 
 
 
-    describe('Refistration failed', function () {
+    describe('Registration failed', function () {
 
             it(`/post User test with empty name column`, () => {
                 return request(app.getHttpServer())
@@ -109,7 +112,7 @@ describe('User/Register', () => {
 
     });
 
-    describe('Should Successfully RegisterUser', function () {
+    describe('Successfully registered User ', function () {
         it(`/post registered  User`, () => {
             return request(app.getHttpServer())
                 .post('/auth/RegisterUser')

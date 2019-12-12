@@ -11,14 +11,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const passport_1 = require("@nestjs/passport");
 const passport_jwt_1 = require("passport-jwt");
-const constants_1 = require("../constants");
 const common_1 = require("@nestjs/common");
+const config = require("config");
+const JwtConf = config.get('jwt');
 let JwtStrategy = class JwtStrategy extends passport_1.PassportStrategy(passport_jwt_1.Strategy, 'jwt') {
     constructor() {
         super({
             jwtFromRequest: passport_jwt_1.ExtractJwt.fromAuthHeaderAsBearerToken(),
             ignoreExpiration: true,
-            secretOrKey: constants_1.jwtConstants.secret,
+            secretOrKey: JwtConf.secret,
         });
     }
     async validate(payload) {
