@@ -12,12 +12,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const passport_1 = require("@nestjs/passport");
 const passport_facebook_1 = require("passport-facebook");
+const config = require("config");
+const AuthApiFacebook = config.get('AuthApiFacebook');
 let FacebookStrategy = class FacebookStrategy extends passport_1.PassportStrategy(passport_facebook_1.Strategy, 'facebook') {
     constructor() {
         super({
-            clientID: '442983963291730',
-            clientSecret: 'af1ef52f71ff40801ae7346926e8ca18',
-            callbackURL: 'http://localhost:3000/auth/facebook',
+            clientID: AuthApiFacebook.clientID,
+            clientSecret: AuthApiFacebook.clientSecret,
+            callbackURL: AuthApiFacebook.callbackURL,
             passReqToCallback: true,
             scope: ['']
         });

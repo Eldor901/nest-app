@@ -12,12 +12,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const passport_1 = require("@nestjs/passport");
 const passport_vkontakte_1 = require("passport-vkontakte");
+const config = require("config");
+const AuthApiVk = config.get("AuthApiVk");
 let VkStrategy = class VkStrategy extends passport_1.PassportStrategy(passport_vkontakte_1.Strategy, 'vk') {
     constructor() {
         super({
-            clientID: '7227244',
-            clientSecret: 'SDxnqAAW2FpjbJm4Hytg',
-            callbackURL: 'http://localhost:3000/auth/vk',
+            clientID: AuthApiVk.clientID,
+            clientSecret: AuthApiVk.clientSecret,
+            callbackURL: AuthApiVk.callbackURL,
             passReqToCallback: true,
             scope: ['']
         });

@@ -1,7 +1,9 @@
 import { Injectable } from "@nestjs/common";
 import { PassportStrategy } from "@nestjs/passport";
 import { Strategy } from "passport-google-oauth2";
+import * as config from  'config'
 
+const AuthApiGoogle = config.get('AuthApiGoogle');
 
 @Injectable()
 export class GoogleStrategy extends PassportStrategy(Strategy, 'google')
@@ -10,9 +12,9 @@ export class GoogleStrategy extends PassportStrategy(Strategy, 'google')
     constructor()
     {
         super({
-            clientID    : '439979850164-tlct50ksq8p2qef325mk8tbkrgs5s1cu.apps.googleusercontent.com',
-            clientSecret: '4_Kr92qiPrrOpNkcg1-0YcRc',
-            callbackURL: 'http://localhost:3000/auth/google',
+            clientID    : AuthApiGoogle.clientID,
+            clientSecret: AuthApiGoogle.clientSecret,
+            callbackURL: AuthApiGoogle.callbackURL,
             passReqToCallback: true,
             scope: ['profile']
         } )

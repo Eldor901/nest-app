@@ -12,12 +12,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const passport_1 = require("@nestjs/passport");
 const passport_google_oauth2_1 = require("passport-google-oauth2");
+const config = require("config");
+const AuthApiGoogle = config.get('AuthApiGoogle');
 let GoogleStrategy = class GoogleStrategy extends passport_1.PassportStrategy(passport_google_oauth2_1.Strategy, 'google') {
     constructor() {
         super({
-            clientID: '439979850164-tlct50ksq8p2qef325mk8tbkrgs5s1cu.apps.googleusercontent.com',
-            clientSecret: '4_Kr92qiPrrOpNkcg1-0YcRc',
-            callbackURL: 'http://localhost:3000/auth/google',
+            clientID: AuthApiGoogle.clientID,
+            clientSecret: AuthApiGoogle.clientSecret,
+            callbackURL: AuthApiGoogle.callbackURL,
             passReqToCallback: true,
             scope: ['profile']
         });

@@ -1,6 +1,9 @@
 import {Injectable} from "@nestjs/common";
 import { PassportStrategy } from "@nestjs/passport";
 import {Strategy} from "passport-vkontakte"
+import * as config from 'config';
+
+const AuthApiVk  = config.get("AuthApiVk");
 
 @Injectable()
 
@@ -9,9 +12,9 @@ export class VkStrategy extends PassportStrategy(Strategy, 'vk')
     constructor()
     {
         super({
-            clientID    : '7227244',
-            clientSecret: 'SDxnqAAW2FpjbJm4Hytg',
-            callbackURL: 'http://localhost:3000/auth/vk',
+            clientID    : AuthApiVk.clientID,
+            clientSecret: AuthApiVk.clientSecret,
+            callbackURL:  AuthApiVk.callbackURL,
             passReqToCallback: true,
             scope: ['']
         } )

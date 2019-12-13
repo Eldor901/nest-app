@@ -2422,7 +2422,7 @@
         "signature": "41c321401e81bdf7a21dd27b464fdcfcec91d1c508f52c47d9d61eba87c281cb"
       },
       "../src/auth/strategyts/google.strategy.ts": {
-        "version": "1e8d1c4a3aacca4ea1f435d4e072bec55890a31780c373f95f165902dbd23f6e",
+        "version": "437315d2fb7d32f1629e6b7ad85a66b45209d3089d98b88e05ace9426bb0c4e5",
         "signature": "10d0639ce7717cecb3ba8b8a115669728412d1869c7c3823752775e3f2bf945d"
       },
       "../node_modules/@types/range-parser/index.d.ts": {
@@ -2474,7 +2474,7 @@
         "signature": "aa71246c3a28f95e46215541ff022b81774b4430a1c1d49d758a706e5db645d3"
       },
       "../src/auth/strategyts/facebook.strategy.ts": {
-        "version": "b2bdf619c71d05be7a11f995974c36b008cc68521a0ace7bd76f9a426f0fa612",
+        "version": "5df4fdc47a0c41b69301a0ed185432c0cfa6150d53a5df583e679974d33f5a38",
         "signature": "8a278703829459db235e72192a88b6b67dc6d9e5684e0e7e283dc0baad3daed6"
       },
       "../node_modules/@types/passport-vkontakte/index.d.ts": {
@@ -2482,7 +2482,7 @@
         "signature": "b069cc79bac7d9d0ffceeb766990554e3172f1d891079928bec612536b18f771"
       },
       "../src/auth/strategyts/vk.strategy.ts": {
-        "version": "719a7aa0a2d368a3a63f4726b9ce456ba8eae96e2f4238782eab6d2bb89aa491",
+        "version": "0817e4cd69b09e61340e28f1ee078ff831e1a4dcfe30716dd5c6b78815f95e17",
         "signature": "694f87c7a46775c9f6cfda4e8f04b598c7e6f23f5686377c32474f9fcc68037a"
       },
       "../src/auth/auth.module.ts": {
@@ -21631,10 +21631,10 @@
       "../node_modules/@types/passport/index.d.ts",
       "../node_modules/@types/passport-strategy/index.d.ts",
       "../node_modules/@types/passport-jwt/index.d.ts",
+      "../src/auth/strategyts/jwt.strategy.ts",
       "../node_modules/@types/passport-facebook/index.d.ts",
       "../src/auth/strategyts/facebook.strategy.ts",
       "../node_modules/@types/passport-vkontakte/index.d.ts",
-      "../src/auth/strategyts/vk.strategy.ts",
       "../src/auth/auth.module.ts",
       "../src/app.module.ts",
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts",
@@ -21957,7 +21957,7 @@
       "../node_modules/@types/webpack/index.d.ts",
       "../node_modules/@types/yargs-parser/index.d.ts",
       "../node_modules/@types/yargs/index.d.ts",
-      "../src/auth/strategyts/jwt.strategy.ts"
+      "../src/auth/strategyts/vk.strategy.ts"
     ]
   },
   "version": "3.7.2"

@@ -1,4 +1,4 @@
-Yaml syntax have been chosen/  .yml
+Yaml syntax have been chosen/ copy text and rename to .yml and write your config
 
 server:
   port:
@@ -16,3 +16,22 @@ SendMailer:
   port:
   user:
   pass:
+
+jwt:
+  constants:
+  expiresTime:
+
+AuthApiFacebook:
+  clientID:
+  cliendSecret:
+  callBackURL:
+
+AuthApiGoogle:
+  clientID:
+  cliendSecret:
+  callBackURL:
+
+AuthApiVk:
+  clientID:
+  cliendSecret:
+  callBackURL:
