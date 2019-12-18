@@ -34,8 +34,8 @@ export class AuthService {
         {
             throw new UnauthorizedException("invalid email or password")
         }
-        const payload: JwtPayload  = { email: userInfo.email, name: userInfo.name };
 
+        const payload: JwtPayload  = { email: userInfo.email, name: userInfo.name };
         const accessToken: string = await this.jwtService.sign(payload);
 
         return {accessToken};
@@ -50,14 +50,19 @@ export class AuthService {
             throw new UnauthorizedException("invalid email. You haven't registered yet")
         }
 
+        const payload: {email: string}  = { email: email};
+
+        const accessToken: string = await this.jwtService.sign(payload);
+
+
         this
             .mailerService
             .sendMail({
                 to: 'eldor3143848@gmail.com',
                 from: 'omega',
                 subject: 'Testing Nest Mailermodule with template ✔',
-                context: { 
-                    text: 'Link to change password',
+                context: {
+                    text: `change your password ${accessToken}`,
                     username: 'OmegaR',
                 },
             })

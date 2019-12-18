@@ -2374,7 +2374,7 @@
         "signature": "836830aceb534f74d0c983f662ee1a9e42200cd5e440986a159d3d5774b6d4ab"
       },
       "../src/auth/auth.service.ts": {
-        "version": "c006a4f8db3100ef9a65e8adb6273e293f5ab948b39104a212add757850092d5",
+        "version": "42e553e78165d3390fcee28822c39980cb7d19a349c7b06a35b727fd8a30483e",
         "signature": "c8fb6a3ce09d37f12ee02585084e97a56e7ce12daab2cfffe252c75e5916ad51"
       },
       "../node_modules/@nestjs/passport/dist/abstract.strategy.d.ts": {
@@ -21608,7 +21608,6 @@
       "../node_modules/@nest-modules/mailer/dist/interfaces/send-mail-options.interface.d.ts",
       "../node_modules/@nest-modules/mailer/dist/mailer.service.d.ts",
       "../node_modules/@nest-modules/mailer/dist/index.d.ts",
-      "../src/auth/auth.service.ts",
       "../node_modules/@nestjs/passport/dist/abstract.strategy.d.ts",
       "../node_modules/@nestjs/passport/dist/interfaces/auth-module.options.d.ts",
       "../node_modules/@nestjs/passport/dist/interfaces/type.interface.d.ts",
@@ -21635,6 +21634,7 @@
       "../node_modules/@types/passport-facebook/index.d.ts",
       "../src/auth/strategyts/facebook.strategy.ts",
       "../node_modules/@types/passport-vkontakte/index.d.ts",
+      "../src/auth/strategyts/vk.strategy.ts",
       "../src/auth/auth.module.ts",
       "../src/app.module.ts",
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts",
@@ -21957,7 +21957,7 @@
       "../node_modules/@types/webpack/index.d.ts",
       "../node_modules/@types/yargs-parser/index.d.ts",
       "../node_modules/@types/yargs/index.d.ts",
-      "../src/auth/strategyts/vk.strategy.ts"
+      "../src/auth/auth.service.ts"
     ]
   },
   "version": "3.7.2"

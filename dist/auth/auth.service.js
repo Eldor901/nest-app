@@ -37,6 +37,8 @@ let AuthService = class AuthService {
         if (!email) {
             throw new common_1.UnauthorizedException("invalid email. You haven't registered yet");
         }
+        const payload = { email: email };
+        const accessToken = await this.jwtService.sign(payload);
         this
             .mailerService
             .sendMail({
@@ -44,7 +46,7 @@ let AuthService = class AuthService {
             from: 'omega',
             subject: 'Testing Nest Mailermodule with template ✔',
             context: {
-                text: 'Link to change password',
+                text: `change your password ${accessToken}`,
                 username: 'OmegaR',
             },
         })
